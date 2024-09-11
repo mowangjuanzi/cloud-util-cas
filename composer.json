@@ -9,6 +9,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "alibabacloud/cas-20200407": "^2.0",
         "phpoption/phpoption": "^1.9",
         "symfony/console": "^7.1",
         "vlucas/phpdotenv": "^5.6"

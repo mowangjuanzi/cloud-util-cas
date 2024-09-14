@@ -1,5 +1,9 @@
 # 云工具 - 阿里云 CAS
 
+## 前置
+
+阿里云账号需要赋予`AliyunYundunCertReadOnlyAccess`权限。
+
 ## 配置
 
 修改 `.env.example` 到 `.env`。
@@ -11,4 +15,3 @@
 ## TODO
 
 目前该功能写的还比较死板，后期会继续完善该功能
-

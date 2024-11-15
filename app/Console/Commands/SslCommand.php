@@ -40,7 +40,11 @@ class SslCommand extends Command
         if ($list) {
             $detail = $this->getDetail($config, $list[0]['CertificateId'] ?? 0);
 
-            file_put_contents("/etc/nginx/ssls/{$host}-{$detail['id']}.key", $detail['Key']);
+            file_put_contents("/etc/nginx/ssls/{$host}-{$detail['Id']}.key", $detail['Key']);
+            file_put_contents("/etc/nginx/ssls/{$host}-{$detail['Id']}.pem", $detail['Cert']);
+
+            symlink("/etc/nginx/ssls/{$host}-{$detail['Id']}.key", "/etc/nginx/ssls/{$host}-cas.key");
+            symlink("/etc/nginx/ssls/{$host}-{$detail['Id']}.pem", "/etc/nginx/ssls/{$host}-cas.pem");
         }
 
         return Command::SUCCESS;
